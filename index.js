@@ -1,6 +1,4 @@
-const todos = require("./routes/todos");
-const signUp = require("./routes/signUp");
-const signIn = require("./routes/signin");
+const tourists = require("./routes/tourists");
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -12,9 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/todos", todos);
-app.use("/api/signup", signUp);
-app.use("/api/signin", signIn);
+app.use("/api/tourists", tourists);
 
 app.get("/", (req, res) => {
   res.send("Welcome to our todos api");
