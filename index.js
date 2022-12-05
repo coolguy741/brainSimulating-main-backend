@@ -13,7 +13,7 @@ app.use(express.static("public"));
 app.use("/api/tourists", tourists);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to our todos api");
+  res.send("Welcome to our brain simulation api");
 });
 
 const connection_string = process.env.CONNECTION_STRING;
