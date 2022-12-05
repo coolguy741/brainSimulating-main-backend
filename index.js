@@ -2,13 +2,13 @@ const tourists = require("./routes/tourists");
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-
 require("dotenv").config();
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static("public"));
 
 app.use("/api/tourists", tourists);
 
@@ -27,3 +27,5 @@ mongoose
   .connect(connection_string)
   .then(() => console.log("MongDB connection established..."))
   .catch((error) => console.error("MongDB connection failed:", error.message));
+
+module.exports = app;
